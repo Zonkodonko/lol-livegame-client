@@ -1,0 +1,19 @@
+{
+  "name": "lol-live-connect",
+  "version": "1.0.0",
+  "description": "Library to connect to League of Legends - Game Client API",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test"
+  },
+  "license": "ISC",
+  "keywords": [
+    "league of legends",
+    "league client apis",
+    "riot games"
+  ],
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
