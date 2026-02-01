@@ -5,15 +5,21 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "test"
+    "test": "nodemon --exec \"node --loader ts-node/esm\" src/test/TestApp.ts"
   },
   "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.11",
+    "undici": "^7.19.2"
+  },
   "keywords": [
     "league of legends",
     "league client apis",
     "riot games"
-  ],
-  "devDependencies": {
-    "typescript": "^5.9.3"
-  }
+  ]
 }
