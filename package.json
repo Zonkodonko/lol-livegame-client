@@ -1,5 +1,5 @@
 {
-  "name": "lol-live-connect",
+  "name": "lol-livegame-client",
   "version": "1.0.0",
   "description": "Library to connect to League of Legends - Game Client API",
   "main": "index.js",
@@ -20,6 +20,7 @@
   "keywords": [
     "league of legends",
     "league client apis",
-    "riot games"
+    "riot games",
+    "liveclientdata"
   ]
 }

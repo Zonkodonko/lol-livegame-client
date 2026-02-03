@@ -1,6 +1,7 @@
 
 
 export type SummonerSpell = {
+    /** Translated name */
     displayName: string;
     rawDescription: string;
     rawDisplayName: string;

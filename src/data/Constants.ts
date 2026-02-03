@@ -14,6 +14,12 @@ export const LANE_BOT = 0
 export const LANE_MID = 1
 export const LANE_TOP = 2
 
+export const Lane = {
+    Bot: LANE_BOT,
+    Mid: LANE_MID,
+    Top: LANE_TOP
+}
+
 //Turret positions
 export const T_POSITION_OUT = 3
 export const T_POSITION_BASE = 2
@@ -31,8 +37,6 @@ export enum DragonType {
     HEXTECH = 'Hextech',
     CHEMTECH = 'Chemtech',
     ELDER = 'Elder'
-
-
 }
 
 
