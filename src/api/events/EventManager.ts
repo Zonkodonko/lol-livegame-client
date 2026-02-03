@@ -1,5 +1,5 @@
 import {EventName, LoLEvent} from "../../data/LoLEvents.js";
-import {getEvents} from "../LiveApiClient.js";
+import {GameClient} from "../LiveApiClient.js";
 
 export interface Subscription {
     unsubscribe(): void,
@@ -77,7 +77,8 @@ export class LoLEventManager {
         this.timer = setTimeout(this.tick, this.fetchInterval);
     }
 
-    private tick = async () =>  {
+    //tick is called every fetchInterval milliseconds
+    private tick = async () => {
         if (!this.running) return;
 
         // Prevent overlapping requests if the endpoint is slow
@@ -88,7 +89,7 @@ export class LoLEventManager {
 
         this.inFlight = true;
         try {
-            const fetchedEvents = await getEvents();
+            const fetchedEvents = await GameClient.getEvents();
             this.retryCount = 0;
 
             if (fetchedEvents.length > this.latestEventIndex) {
@@ -100,7 +101,7 @@ export class LoLEventManager {
                 }
 
                 this.latestEventIndex = fetchedEvents.length;
-                if(newEvents[this.latestEventIndex-1].EventName === EventName.GAME_END){
+                if (newEvents[this.latestEventIndex - 1].EventName === EventName.GAME_END) {
                     this.latestEventIndex = 0
                 }
             }
@@ -127,6 +128,9 @@ export class LoLEventManager {
         }
     };
 
+    /**
+     * Stops fetching events.
+     */
     public stopFetching(): void {
         this.running = false;
         if (this.timer) {
