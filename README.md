@@ -1,6 +1,14 @@
 # lol-livegame-client
 A client for the League of Legends [Game Client Api](https://developer.riotgames.com/docs/lol#game-client-api). With types and constant values and event handling.
 
+## Installation
+
+Install using npm or git.
+
+- Github:`git clone https://github.com/Zonkodonko/lol-livegame-client.git`
+- NPM: `npm install lol-livegame-client`
+
+
 ## Make Requests
 
 Use the `GameClient` object to make requests to the game.
@@ -8,7 +16,7 @@ Use the `GameClient` object to make requests to the game.
 #### Usage Example:
 
 ````typescript
-GameClient.getAllGameData().then(gameData: GameData => console.log(JSON.stringify(gameData)))
+GameClient.getAllGameData().then((gameData: GameData) => console.log(JSON.stringify(gameData)))
 ````
 
 In case I am too slow updating the library, you can make custom requests:
