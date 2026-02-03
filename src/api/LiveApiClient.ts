@@ -2,7 +2,7 @@ import {Agent, request} from "undici";
 import {RIOT_CERT} from "../resources/riotgames.pem.js";
 import {LoLEvent} from "../data/LoLEvents.js";
 import {LiveClientData} from "../data/LiveData.js";
-import {ActivePlayer} from "../data/ActivePlayerMin.js";
+import {ActivePlayer} from "../data/ActivePlayer.js";
 import {ChampionAbilities} from "../data/ChampionAbilities.js";
 import {ActivePlayerRunes, PlayerRunes} from "../data/runes/PlayerRunes.js";
 import {Player, PlayerScores} from "../data/Player.js";
