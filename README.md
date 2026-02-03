@@ -1,20 +1,20 @@
 # lol-livegame-client
-A client for the League of Legends [Game Client Api](https://developer.riotgames.com/docs/lol#game-client-api)
+A client for the League of Legends [Game Client Api](https://developer.riotgames.com/docs/lol#game-client-api). With types and constant values and event handling.
 
 ## Make Requests
 
 Use the `GameClient` object to make requests to the game.
 
-### Usage Example:
+#### Usage Example:
 
-```` typescript
-GameClient.getAllGameData().then(gameData: GameData => console.log(JSON.stringify(gameData)));
+````typescript
+GameClient.getAllGameData().then(gameData: GameData => console.log(JSON.stringify(gameData)))
 ````
 
 In case I am too slow updating the library, you can make custom requests:
 
-```` typescript
-GameClient.requestLiveApi('/liveclientdata/newendpoint').then(response => console.log(response));
+````typescript
+GameClient.requestLiveApi('/liveclientdata/newendpoint').then(response => console.log(response))
 ````
 
 
@@ -23,22 +23,22 @@ GameClient.requestLiveApi('/liveclientdata/newendpoint').then(response => consol
 To listen to events, subscribe to the `LoLEventManager` and start fetching events (requesting `GET ​https://127.0.0.1:2999/liveclientdata/eventdata`) .
 You can start fetching before the game starts. The event manager will retry until the game starts or max retries are reached. 
 
-### Usage Example:
+#### Usage Example:
 
 ````typescript
 
-const eventManager = new LoLEventManager();
+const eventManager = new LoLEventManager()
 
 eventManager.subscribe((event: LoLEvent) => {
     switch (event.EventName) {
         case EventName.GameStart:
-            console.log('Game started!');
+            console.log('Game started!')
             break;
         case EventName.GameEnd:
-            console.log('Game ended!');
+            console.log('Game ended!')
             break;
         default:
-            console.log('Unknown event:', event.EventName);
+            console.log('Unknown event:', event.EventName)
     }
 });
 ````
@@ -53,7 +53,7 @@ Turrets and inhibitors are named in the format `{type}_T{team}_L{lane}_P{positio
 
 You can find all names at [StructureNames.md](src/resources/StructureNames.md)
 
-##### Usage Example:
+#### Usage Example:
 
 ````typescript
 const turretName = (event as TurretKilled).TurretKilled; //Turret_TChaos_L1_P2_2237424422
@@ -67,7 +67,7 @@ if(turret.lane === Lane.Mid) { // Lane.Mid === 1
 
 # Contributing
 Contributions are welcome!  
-If something doesn't work, make an issue or a pull request.
+If something doesn't work, make an issue or a pull request...duh
 
 
 
