@@ -1,6 +1,6 @@
 {
   "name": "lol-livegame-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to connect to League of Legends - Game Client API",
   "scripts": {
     "test": "nodemon --exec \"node --loader ts-node/esm\" src/test/TestApp.ts",
@@ -24,10 +24,8 @@
     "riot games",
     "liveclientdata"
   ],
-
   "author": "Zonko",
   "repository": "https://github.com/Zonkodonko/lol-livegame-client.git",
-
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -37,6 +35,9 @@
       "default": "./dist/index.js"
     }
   },
-  "files": [ "dist/**", "README.md"],
+  "files": [
+    "dist/**",
+    "README.md"
+  ],
   "sideEffects": false
 }
