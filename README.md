@@ -49,6 +49,8 @@ eventManager.subscribe((event: LoLEvent) => {
             console.log('Unknown event:', event.EventName)
     }
 });
+
+eventManager.startFetching()
 ````
 
 You can find supported events in the [EventName](src/data/LoLEvents.ts) enum.
