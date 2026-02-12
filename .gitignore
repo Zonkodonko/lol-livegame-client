@@ -7,3 +7,5 @@ package-lock.json
 out/
 
 
+/dist/
+/node_modules/
